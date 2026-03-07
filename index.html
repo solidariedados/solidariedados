@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SolidariedadosMap - Portugal</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header">
+    <h1>Solidariedados</h1>
+    <p>Mapa de GMs aderentes</p>
+  </div>
+  <div id="map"></div>
+
+  <!-- Locations Sidebar -->
+  <div id="locations-sidebar" class="collapsed">
+    <div id="sidebar-header">
+      <h2>GMs aderentes</h2>
+      <button id="sidebar-toggle" class="toggle-btn">+</button>
+    </div>
+    <div id="locations-list" class="hidden"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/districts-data.js"></script>
+  <script src="js/locations.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>
