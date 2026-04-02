@@ -310,14 +310,41 @@ setTimeout(() => {
 
   const locationMarkers = {};
 
+  // SVG icons for social links
+  const ICON_MAPS = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>`;
+  const ICON_INSTAGRAM = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`;
+  const ICON_DISCORD = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.04.032.05a19.9 19.9 0 0 0 5.993 3.032.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.032.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>`;
+  const ICON_TWITCH = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>`;
+  const ICON_WEBSITE = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>`;
+
   window.LOCATIONS.forEach((location, index) => {
     // Build popup HTML
     const imageHtml = location.image
       ? `<div class="popup-image"><img src="${location.image}" alt="${location.name}" onerror="this.style.display='none'"/></div>`
       : '';
 
-    const linkHtml = location.url
-      ? `<a href="${location.url}" target="_blank" rel="noopener noreferrer" class="popup-link">Saber mais →</a>`
+    const districtHtml = location.distrito
+      ? `<p class="popup-district">${location.distrito}</p>`
+      : '';
+
+    const socialLinks = [];
+    if (location.maps) {
+      socialLinks.push(`<a href="${location.maps}" target="_blank" rel="noopener noreferrer" class="social-btn social-maps" title="Ver no Google Maps">${ICON_MAPS}</a>`);
+    }
+    if (location.instagram) {
+      socialLinks.push(`<a href="https://www.instagram.com/${location.instagram}/" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" title="Instagram @${location.instagram}">${ICON_INSTAGRAM}</a>`);
+    }
+    if (location.discord) {
+      socialLinks.push(`<a href="${location.discord}" target="_blank" rel="noopener noreferrer" class="social-btn social-discord" title="Discord">${ICON_DISCORD}</a>`);
+    }
+    if (location.twitch) {
+      socialLinks.push(`<a href="${location.twitch}" target="_blank" rel="noopener noreferrer" class="social-btn social-twitch" title="Twitch">${ICON_TWITCH}</a>`);
+    }
+    if (location.website) {
+      socialLinks.push(`<a href="${location.website}" target="_blank" rel="noopener noreferrer" class="social-btn social-website" title="Website">${ICON_WEBSITE}</a>`);
+    }
+    const socialHtml = socialLinks.length > 0
+      ? `<div class="popup-social">${socialLinks.join('')}</div>`
       : '';
 
     const popupContent = `
@@ -325,8 +352,9 @@ setTimeout(() => {
         ${imageHtml}
         <div class="popup-body">
           <h3>${location.name}</h3>
+          ${districtHtml}
           <p>${location.description || ''}</p>
-          ${linkHtml}
+          ${socialHtml}
         </div>
       </div>
     `;
@@ -354,7 +382,7 @@ setTimeout(() => {
     listItem.className = 'location-item';
     listItem.innerHTML = `
       <h3>${location.name}</h3>
-      ${location.url ? '<a href="' + location.url + '" target="_blank">Visitar →</a>' : ''}
+      ${location.distrito ? `<p class="item-district">${location.distrito}</p>` : ''}
     `;
 
     // Click on sidebar item to focus marker on map
