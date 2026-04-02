@@ -15,7 +15,11 @@
  *   - instagram:   Instagram handle, without @ (e.g. 'afonsomolinar')
  *   - discord:     Discord URL (https://discordapp.com/users/<id> or server invite)
  *   - twitch:      Twitch URL (full link)
+ *   - youtube:     YouTube channel URL (full link)
  *   - website:     Personal page URL (full link)
+ *   - custom1/2/3: Custom link with { name, icon, link }
+ *                  icon can be an image URL or an emoji (e.g. '🎲')
+ *                  name appears on hover, link is the destination URL
  */
 
 window.LOCATIONS = [
@@ -30,7 +34,11 @@ window.LOCATIONS = [
     instagram: 'afonsomolinar',
     discord: 'https://discord.gg/exemplo',
     twitch: 'https://www.twitch.tv/afonsomolinar',
+    youtube: 'https://youtube.com/@afonsomolinar',
     website: 'https://exemplo.pt/afonso',
+    custom1: { name: 'Teatro à Espada', icon: '🎭', link: 'https://exemplo.pt/teatro' },
+    custom2: { name: 'Loja de Merch', icon: '👕', link: 'https://exemplo.pt/merch' },
+    custom3: { name: 'Loja', icon: '🛒', link: 'https://exemplo.pt/loja' },
   },
   {
     name: 'Carolina Dias',
@@ -43,7 +51,11 @@ window.LOCATIONS = [
     instagram: 'carimagadias',
     discord: 'https://discordapp.com/users/111111111111111111',
     twitch: 'https://www.twitch.tv/carimagadias',
+    youtube: 'https://youtube.com/@carimagadias',
     website: 'https://exemplo.pt/carolina',
+    custom1: { name: 'Quebradados', icon: '🎲', link: 'https://exemplo.pt/quebradados' },
+    custom2: { name: 'Podcast', icon: '🎙️', link: 'https://exemplo.pt/podcast' },
+    custom3: { name: 'Newsletter', icon: '📧', link: 'https://exemplo.pt/newsletter' },
   },
   {
     name: 'Santas',
@@ -56,7 +68,11 @@ window.LOCATIONS = [
     instagram: 'santasgm',
     discord: 'https://discord.gg/riomaior',
     twitch: 'https://www.twitch.tv/santasgm',
+    youtube: 'https://youtube.com/@santasgm',
     website: 'https://exemplo.pt/santas',
+    custom1: { name: 'Grupo Roleplayers Rio Maior', icon: '⚔️', link: 'https://exemplo.pt/riomaior' },
+    custom2: { name: 'Eventos', icon: '📅', link: 'https://exemplo.pt/eventos' },
+    custom3: { name: 'Patreon', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg', link: 'https://patreon.com/exemplo' },
   },
   {
     name: 'Rosa Sininho',
@@ -69,7 +85,10 @@ window.LOCATIONS = [
     instagram: 'rosasininho',
     discord: 'https://discordapp.com/users/222222222222222222',
     twitch: 'https://www.twitch.tv/rosasininho',
+    youtube: 'https://youtube.com/@rosasininho',
     website: 'https://exemplo.pt/rosa',
+    custom1: { name: 'TikTok', icon: '🎵', link: 'https://tiktok.com/@exemplo' },
+    custom2: { name: 'Ko-fi', icon: '☕', link: 'https://ko-fi.com/exemplo' },
+    custom3: { name: 'Linktree', icon: '🌿', link: 'https://linktr.ee/exemplo' },
   }
 ];
-
