@@ -34,6 +34,16 @@ body {
   display: block;
 }
 
+#header-title {
+  color: white;
+  font-family: 'Rockwell Extra Bold', 'Rockwell', Georgia, serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  margin-left: 16px;
+  white-space: nowrap;
+}
+
 #map {
   flex: 1;
   background-color: #e8e8e8;
