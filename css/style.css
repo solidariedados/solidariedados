@@ -394,6 +394,8 @@ body {
   font-size: 14px;
   margin: 0;
   color: #F7B229;
+  font-family: 'Rockwell Extra Bold', 'Rockwell', Georgia, serif;
+  font-weight: 900;
 }
 
 .toggle-btn {
