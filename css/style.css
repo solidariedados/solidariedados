@@ -393,12 +393,13 @@ body {
 #sidebar-header h2 {
   font-size: 14px;
   margin: 0;
+  color: #F7B229;
 }
 
 .toggle-btn {
   background: none;
   border: none;
-  color: white;
+  color: #F7B229;
   font-size: 20px;
   cursor: pointer;
   padding: 0;
