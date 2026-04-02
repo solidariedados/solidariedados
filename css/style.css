@@ -64,6 +64,18 @@ body {
   font-family: inherit;
 }
 
+.leaflet-bar a {
+  background-color: #2C1040 !important;
+  color: #F7B229 !important;
+  border-color: #2C1040 !important;
+  font-weight: 900;
+}
+
+.leaflet-bar a:hover {
+  background-color: #3d1a5a !important;
+  color: #F7B229 !important;
+}
+
 /* Disable default tile layer, use custom background */
 .leaflet-tile-pane {
   display: none;
