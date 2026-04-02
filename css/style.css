@@ -116,7 +116,7 @@ body {
   width: 20px;
   height: 20px;
   background: #F7B229;
-  border: 2px solid white;
+  border: 2px solid #2C1040;
   border-radius: 50%;
   box-shadow:
     0 3px 8px rgba(247, 178, 41, 0.6),
@@ -128,7 +128,7 @@ body {
   content: '';
   width: 6px;
   height: 6px;
-  background: white;
+  background: #2C1040;
   border-radius: 50%;
   position: absolute;
   top: 50%;
