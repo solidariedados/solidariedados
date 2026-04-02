@@ -70,7 +70,7 @@ body {
 
 /* Hover tooltip */
 .district-tooltip {
-  background-color: rgba(123, 63, 242, 0.9);
+  background-color: rgba(44, 16, 64, 0.9);
   border: none;
   border-radius: 4px;
   color: white;
@@ -80,7 +80,7 @@ body {
 }
 
 .district-tooltip::before {
-  border-top-color: rgba(123, 63, 242, 0.9);
+  border-top-color: rgba(44, 16, 64, 0.9);
 }
 
 /* Make districts clickable - show pointer cursor */

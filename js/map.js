@@ -47,7 +47,7 @@ const ISLAND_TRANSFORMS = {
 const COLORS = {
   district_fill: '#c4b5fd',      // Light purple fill
   district_stroke: '#2C1040',    // Dark purple stroke
-  district_fill_hover: '#2C1040', // Hover fill
+  district_fill_hover: '#a78bfa', // Medium purple (hover)
   tooltip_bg: '#2C1040',
 };
 
