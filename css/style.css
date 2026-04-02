@@ -21,15 +21,15 @@ body {
 
 #header {
   background: #2C1040;
-  padding: 8px 16px;
+  padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 #header-logo {
-  height: 56px;
+  height: 72px;
   width: auto;
   display: block;
 }
