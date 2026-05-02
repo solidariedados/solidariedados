@@ -10,6 +10,7 @@
 const map = L.map('map', {
   center: [39.5, -8.0],
   zoom: 6,
+  maxZoom: 18,
   zoomControl: true,
   attributionControl: true,
   maxBoundsViscosity: 1.0,
@@ -308,6 +309,19 @@ setTimeout(() => {
     return;
   }
 
+  const clusterGroup = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+      return L.divIcon({
+        html: `<div class="cluster-icon">${cluster.getChildCount()}</div>`,
+        className: 'cluster-wrapper',
+        iconSize: L.point(38, 38),
+      });
+    },
+    showCoverageOnHover: false,
+    zoomToBoundsOnClick: true,
+    maxClusterRadius: 60,
+  });
+
   const locationMarkers = {};
 
   // SVG icons for social links
@@ -392,7 +406,7 @@ setTimeout(() => {
         autoPanPaddingTopLeft: [50, 180],
         autoPanPadding: [50, 50],
       })
-      .addTo(map);
+      .addTo(clusterGroup);
 
     locationMarkers[index] = marker;
 
@@ -421,6 +435,7 @@ setTimeout(() => {
     locationsList.appendChild(listItem);
   });
 
+  clusterGroup.addTo(map);
   console.log('Location markers loaded:', window.LOCATIONS.length, 'locations');
 }, 500);
 
