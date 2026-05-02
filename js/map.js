@@ -410,11 +410,7 @@ setTimeout(() => {
 
     locationMarkers[index] = marker;
 
-    // Add click handler to zoom in when clicking marker directly
-    // Don't re-center — autoPan on the popup handles positioning
-    marker.on('click', function() {
-      map.setZoom(8, { animate: true });
-    });
+    // autoPan on the popup handles positioning when marker is clicked
 
     // Add to sidebar list
     const listItem = document.createElement('div');
@@ -427,8 +423,7 @@ setTimeout(() => {
     // Click on sidebar item to focus marker on map
     listItem.addEventListener('click', (e) => {
       if (e.target.tagName !== 'A') {
-        map.setView([location.lat, location.lng], 8, { animate: false });
-        marker.openPopup();
+        clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
       }
     });
 
