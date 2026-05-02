@@ -248,6 +248,16 @@ body {
 .social-btn.social-website:hover   { background: #444;    color: white; }
 .social-btn.social-custom:hover    { background: #2d0f5c; color: white; }
 
+.read-more-btn {
+  background: none;
+  border: none;
+  color: #F7B229;
+  cursor: pointer;
+  font-size: 0.8em;
+  padding: 0;
+  text-decoration: underline;
+}
+
 .popup-link {
   display: inline-block;
   background: #2C1040;

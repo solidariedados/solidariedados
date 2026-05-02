@@ -347,12 +347,17 @@ setTimeout(() => {
     if (location.website) {
       socialLinks.push(`<a href="${location.website}" target="_blank" rel="noopener noreferrer" class="social-btn social-website" title="Website">${ICON_WEBSITE}</a>`);
     }
+    const ICON_KEYWORDS = { instagram: ICON_INSTAGRAM, discord: ICON_DISCORD, twitch: ICON_TWITCH, youtube: ICON_YOUTUBE, website: ICON_WEBSITE, maps: ICON_MAPS };
     [location.custom1, location.custom2, location.custom3].forEach(custom => {
       if (!custom) return;
-      const isUrl = custom.icon && (custom.icon.startsWith('http') || custom.icon.startsWith('/'));
-      const iconHtml = isUrl
-        ? `<img src="${custom.icon}" alt="${custom.name}" style="width:15px;height:15px;object-fit:contain;"/>`
-        : `<span style="font-size:14px;line-height:1;">${custom.icon}</span>`;
+      let iconHtml;
+      if (ICON_KEYWORDS[custom.icon]) {
+        iconHtml = ICON_KEYWORDS[custom.icon];
+      } else if (custom.icon && (custom.icon.startsWith('http') || custom.icon.startsWith('/'))) {
+        iconHtml = `<img src="${custom.icon}" alt="${custom.name}" style="width:15px;height:15px;object-fit:contain;"/>`;
+      } else {
+        iconHtml = `<span style="font-size:14px;line-height:1;">${custom.icon}</span>`;
+      }
       socialLinks.push(`<a href="${custom.link}" target="_blank" rel="noopener noreferrer" class="social-btn social-custom" title="${custom.name}">${iconHtml}</a>`);
     });
     const socialHtml = socialLinks.length > 0
@@ -365,7 +370,14 @@ setTimeout(() => {
         <div class="popup-body">
           <h3>${location.name}</h3>
           ${districtHtml}
-          <p>${location.description || ''}</p>
+          ${(() => {
+            const desc = location.description || '';
+            const limit = 100;
+            if (desc.length <= limit) return `<p>${desc}</p>`;
+            const short = desc.slice(0, limit).trimEnd() + '…';
+            const id = `desc-${index}`;
+            return `<p id="${id}-short">${short} <button class="read-more-btn" onclick="(function(){document.getElementById('${id}-short').style.display='none';document.getElementById('${id}-full').style.display='block'})()">Ler mais</button></p><p id="${id}-full" style="display:none">${desc} <button class="read-more-btn" onclick="(function(){document.getElementById('${id}-full').style.display='none';document.getElementById('${id}-short').style.display='block'})()">Ler menos</button></p>`;
+          })()}
           ${socialHtml}
         </div>
       </div>

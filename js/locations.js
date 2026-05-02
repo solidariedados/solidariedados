@@ -102,7 +102,7 @@ window.LOCATIONS = [
     instagram: 'riddari.cos',
     discord: 'https://discord.gg/kRA2f2Aku',
     twitch: 'https://www.twitch.tv/dadosedragoes',
-    custom1: { name: 'Instagram Dados e Dragões', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png', link: 'https://www.instagram.com/dadosdragoes/' },
+    custom1: { name: 'Instagram Dados e Dragões', icon: 'instagram', link: 'https://www.instagram.com/dadosdragoes/' },
   },
   {
     name: 'Barda Laurinha',
@@ -116,6 +116,6 @@ window.LOCATIONS = [
     discord: 'http://discordapp.com/users/690242834254659747',
     twitch: 'https://www.twitch.tv/bardos_do_mondego',
     website: 'https://linktr.ee/bardosdomondego',
-    custom1: { name: 'Instagram Bardos do Mondego', icon: '📸', link: 'https://www.instagram.com/bardos_do_mondego/' },
+    custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' },
   }
 ];
