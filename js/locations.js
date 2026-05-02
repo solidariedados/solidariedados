@@ -58,10 +58,10 @@ window.LOCATIONS = [
     custom3: { name: 'Newsletter', icon: '📧', link: 'https://exemplo.pt/newsletter' },
   },
   {
-    name: 'Santas',
+    name: 'Santas / Daniel Santana',
     image: 'pictures/santas.jpg',
     distrito: 'Santarém',
-    description: 'Roleplayers Rio Maior',
+    description: 'Um entusiasta de TTRPG que adora conduzir campanhas curtas e one-shots em vários sistemas de jogos narrativos com cenários de fantasia, horror, western e ficção científica! Ele organiza os encontros mensais de TTRPG em Rio Maior e costuma estar ativo na comunidade de TTRPG e quer fazer com que Portugal inteiro jogue.',
     lat: 39.2368,
     lng: -8.7265,
     maps: 'https://maps.google.com/?q=Rio+Maior,Portugal',
