@@ -102,5 +102,20 @@ window.LOCATIONS = [
     instagram: 'riddari.cos',
     discord: 'https://discord.gg/kRA2f2Aku',
     twitch: 'https://www.twitch.tv/dadosedragoes',
+    custom1: { name: 'Instagram Dados e Dragões', icon: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png', link: 'https://www.instagram.com/dadosdragoes/' },
+  },
+  {
+    name: 'Barda Laurinha',
+    image: 'pictures/bardalaurinha.jpg',
+    distrito: 'Coimbra',
+    description: 'Nascida e criada em Coimbra, estudante de Psicologia da Educação e Desenvolvimento e um dos primeiros Bardos do Mondego. Costuma mestrar para grupos mais pequenos de jogadores novatos, de variadas idades, com um lugar especial no seu coração para mini-aventureiros e o seu caos saudável. As suas histórias envolvem (quase) sempre temas socio-políticos, tentando plantar a semente da mudança sem perder a magia da arte do storytelling. Gosta de criar personagens com a curiosidade e esperança de criança e, apesar de dificilmente assistires a um TPK na sua mesa, momentos de riso e/ou choro são garantidos!',
+    lat: 40.2033,
+    lng: -8.4103,
+    maps: 'https://maps.app.goo.gl/LNBXxR58ZywnHj8F6',
+    instagram: 'thefairybard',
+    discord: 'http://discordapp.com/users/690242834254659747',
+    twitch: 'https://www.twitch.tv/bardos_do_mondego',
+    website: 'https://linktr.ee/bardosdomondego',
+    custom1: { name: 'Instagram Bardos do Mondego', icon: '📸', link: 'https://www.instagram.com/bardos_do_mondego/' },
   }
 ];
