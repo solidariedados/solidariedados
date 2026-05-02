@@ -90,5 +90,17 @@ window.LOCATIONS = [
     custom1: { name: 'TikTok', icon: '🎵', link: 'https://tiktok.com/@exemplo' },
     custom2: { name: 'Ko-fi', icon: '☕', link: 'https://ko-fi.com/exemplo' },
     custom3: { name: 'Linktree', icon: '🌿', link: 'https://linktr.ee/exemplo' },
+  },
+  {
+    name: 'Riddari',
+    image: 'pictures/riddari.jpg',
+    distrito: 'Santarém',
+    description: 'Um grande apaixonado por narrativa de fantasia e actualmente Daggerheart é o meu campo de batalha favorito. Sou DM e faço streams onde me dedico a criar e partilhar as minhas campanhas com os meus jogadores. Onde exploramos o equilibrio entre esperança e medo. Essa dedicação ao universo de Daggerheart também se extende ao meu podcast onde mergulhamos a fundo em tudo o que vem no livro. Fora das mesas sou Fotografo e Videografo onde uso o meu olho criativo para dar vida a outras histórias através da Frutografia. No fundo, sou um contador de histórias, sejam elas com dados, microfones ou lentes.',
+    lat: 39.33768983780347,
+    lng: -8.935198920472429,
+    maps: 'https://maps.app.goo.gl/WHZCeGXXPm49MW5E6',
+    instagram: 'riddari.cos',
+    discord: 'https://discord.gg/kRA2f2Aku',
+    twitch: 'https://www.twitch.tv/dadosedragoes',
   }
 ];
