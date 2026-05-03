@@ -430,35 +430,67 @@ setTimeout(() => {
     locationsList.appendChild(listItem);
   });
 
+  // Sort sidebar list alphabetically by name
+  Array.from(locationsList.children)
+    .sort((a, b) => a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent, 'pt'))
+    .forEach(item => locationsList.appendChild(item));
+
   clusterGroup.addTo(map);
 
-  // Keep popup alive by pulling the marker out of the cluster while its popup is open
+  // Return a pinned marker back into the cluster group
   function returnMarkerToCluster(marker) {
-    if (map.hasLayer(marker)) map.removeLayer(marker);
-    clusterGroup.addLayer(marker);
+    if (map.hasLayer(marker) && !clusterGroup.hasLayer(marker)) {
+      map.removeLayer(marker);
+      clusterGroup.addLayer(marker);
+    }
   }
+
+  // When a cluster spiderfies, intercept clicks on each marker in capture phase
+  // so the unspiderfy never fires — the spiderfy stays open while a popup is shown
+  clusterGroup.on('spiderfied', function(e) {
+    e.markers.forEach(function(marker) {
+      const el = marker.getElement();
+      if (!el) return;
+      marker._keepSpiderfyOpen = function(evt) {
+        evt.stopPropagation();
+        marker.openPopup();
+      };
+      el.addEventListener('click', marker._keepSpiderfyOpen, true);
+    });
+  });
+
+  clusterGroup.on('unspiderfied', function(e) {
+    e.markers.forEach(function(marker) {
+      const el = marker.getElement();
+      if (el && marker._keepSpiderfyOpen) {
+        el.removeEventListener('click', marker._keepSpiderfyOpen, true);
+      }
+      delete marker._keepSpiderfyOpen;
+    });
+  });
 
   window.LOCATIONS.forEach((_, i) => {
     const m = locationMarkers[i];
     let isPinned = false;
+    let reattaching = false;
 
     m.on('popupopen', function() {
       if (!isPinned) {
         isPinned = true;
-        clusterGroup.removeLayer(m);
-        m.addTo(map);
-        m.openPopup(); // reopen after move (removeLayer closes it)
+        // Only pin to map when not spiderfied; spiderfied markers stay in the
+        // cluster so the spiderfy legs remain visible
+        if (clusterGroup._spiderfied == null) {
+          reattaching = true;
+          clusterGroup.removeLayer(m);
+          m.addTo(map);
+          reattaching = false;
+          m.openPopup();
+        }
       }
-      // Set up close button to return marker to cluster
-      const closeBtn = document.querySelector('.leaflet-popup-close-button');
-      if (closeBtn) closeBtn.addEventListener('click', function() {
-        isPinned = false;
-        returnMarkerToCluster(m);
-      }, { once: true });
     });
 
-    map.on('click', function() {
-      if (isPinned && !m.isPopupOpen()) {
+    m.on('popupclose', function() {
+      if (isPinned && !reattaching) {
         isPinned = false;
         returnMarkerToCluster(m);
       }
