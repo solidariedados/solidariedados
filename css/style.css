@@ -76,6 +76,13 @@ body {
   color: #F7B229 !important;
 }
 
+.leaflet-bar a.leaflet-disabled {
+  background-color: #1a0a28 !important;
+  color: #4a3a20 !important;
+  cursor: default !important;
+  opacity: 0.45;
+}
+
 /* Disable default tile layer, use custom background */
 .leaflet-tile-pane {
   display: none;
