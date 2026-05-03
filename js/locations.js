@@ -48,6 +48,16 @@ window.LOCATIONS = [
     custom1: { name: 'Instagram Dados e Dragões', icon: 'instagram', link: 'https://www.instagram.com/dadosdragoes/' },
   },
   {
+    name: 'Mitchell Ventura',
+    image: 'pictures/mitchell.jpg',
+    distrito: 'Santarém',
+    description: 'Mitchell Ventura é um dos produtores do podcast português de TTRPG Dados à Portuguesa, conhecido por explorar diversos sistemas e mundos, com um elenco rotativo. Mitchell também é um dos criadores da The Mimic Network, uma rede colaborativa de podcasts de RPG de mesa focada em apoiar o crescimento e expandir a distribuição.',
+    lat: 39.2354,
+    lng: -8.6858,
+    instagram: 'mitchellfroisventura',
+    discord: 'http://discordapp.com/users/403567480217272330'
+  },
+  {
     name: 'Barda Laurinha',
     image: 'pictures/bardalaurinha.jpg',
     distrito: 'Coimbra',
