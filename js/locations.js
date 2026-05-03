@@ -151,7 +151,7 @@ window.LOCATIONS = [
   {
     name: 'Carolina Magalhães Dias',
     image: 'pictures/cari.jpg',
-    distrito: 'Santarém',
+    distrito: 'Porto',
     description: 'Jogadora desde 2016, co-fundadora e atual Presidente da Associação Quebra-Dados. Mestra na Quebra-Dados e outros espaços do Porto, assim como em convenções espalhadas pelo país.',
     lat: 41.1622,
     lng: -8.6185,
@@ -205,5 +205,15 @@ window.LOCATIONS = [
     discord: 'https://discord.gg/nB3AYpupUx',
     website: 'https://www.teatroafaca.com/teatroaespada',
     custom1: { name: 'Instagram Teatro à Espada', icon: 'instagram', link: 'https://www.instagram.com/teatroaespada/' },
+  },
+  {
+    name: 'Ricardo Antunes',
+    image: 'pictures/ricardoantunes.jpg',
+    distrito: 'Lisboa',
+    description: ' Game Master focado em criar experiências imersivas e memoráveis, onde cada sessão tem peso narrativo e impacto real nos jogadores. Gosto de explorar temas mais sombrios e psicológicos, equilibrando história rica com desafios mecânicos bem pensados. Prezo sessões com bom ritmo, estrutura sólida e momentos que ficam na memória muito depois do jogo acabar.',
+    lat: 38.7123,
+    lng: -9.1390,
+    instagram: 'whitefangpt',
+    discord: 'http://discordapp.com/users/236540974271037440'
   }
 ];
