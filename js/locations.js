@@ -203,6 +203,7 @@ window.LOCATIONS = [
     maps: 'https://maps.app.goo.gl/4CFGkds47H3H5unj9',
     instagram: 'afonsomolina',
     discord: 'https://discord.gg/nB3AYpupUx',
-    website: 'https://www.teatroafaca.com/teatroaespada'
+    website: 'https://www.teatroafaca.com/teatroaespada',
+    custom1: { name: 'Instagram Teatro à Espada', icon: 'instagram', link: 'https://www.instagram.com/teatroaespada/' },
   }
 ];
