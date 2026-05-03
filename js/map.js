@@ -479,14 +479,39 @@ const locationsList = document.getElementById('locations-list');
 const sidebarElement = document.getElementById('locations-sidebar');
 
 // Function to toggle sidebar state
+const searchContainer = document.getElementById('sidebar-search');
+const searchInput = document.getElementById('search-input');
+
 function toggleSidebar() {
   if (locationsList && sidebarElement && toggleBtn) {
+    const isHidden = !locationsList.classList.contains('hidden');
     locationsList.classList.toggle('hidden');
+    if (searchContainer) searchContainer.classList.toggle('hidden');
     sidebarElement.classList.toggle('collapsed');
-    // Update button text based on list state
-    toggleBtn.textContent = locationsList.classList.contains('hidden') ? '+' : '−';
-    console.log('List is now:', locationsList.classList.contains('hidden') ? 'hidden' : 'visible');
+    toggleBtn.textContent = isHidden ? '+' : '−';
+    if (isHidden && searchInput) {
+      searchInput.value = '';
+      filterLocations('');
+    }
   }
+}
+
+function filterLocations(query) {
+  const items = document.querySelectorAll('.location-item');
+  const q = query.toLowerCase();
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(q) ? '' : 'none';
+  });
+}
+
+if (searchInput) {
+  searchInput.addEventListener('input', function() {
+    filterLocations(this.value);
+  });
+  searchInput.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
 }
 
 if (sidebarHeader && locationsList && sidebarElement) {
