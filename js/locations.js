@@ -59,6 +59,7 @@ window.LOCATIONS = [
   },
   {
     name: 'Nuno Teixeira',
+    image: 'pictures/nunoteixeira.jpg',
     distrito: 'Setúbal',
     description: '10 anos de experiência; hiper-narrativo; improv.',
     lat: 38.5244,
