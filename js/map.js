@@ -445,28 +445,31 @@ setTimeout(() => {
     }
   }
 
-  // When a cluster spiderfies, intercept clicks on each marker in capture phase
-  // so the unspiderfy never fires — the spiderfy stays open while a popup is shown
-  clusterGroup.on('spiderfied', function(e) {
-    e.markers.forEach(function(marker) {
-      const el = marker.getElement();
-      if (!el) return;
-      marker._keepSpiderfyOpen = function(evt) {
+  // Keep spiderfy open when a marker is clicked.
+  // We intercept at the document level in capture phase — this fires before
+  // Leaflet's own handlers on the marker element, so stopPropagation() prevents
+  // the unspiderfy from ever triggering.
+  let spiderfiedMarkers = [];
+
+  function preventUnspiderfy(evt) {
+    for (var i = 0; i < spiderfiedMarkers.length; i++) {
+      var el = spiderfiedMarkers[i].getElement();
+      if (el && el.contains(evt.target)) {
         evt.stopPropagation();
-        marker.openPopup();
-      };
-      el.addEventListener('click', marker._keepSpiderfyOpen, true);
-    });
+        spiderfiedMarkers[i].openPopup();
+        return;
+      }
+    }
+  }
+
+  clusterGroup.on('spiderfied', function(e) {
+    spiderfiedMarkers = e.markers;
+    document.addEventListener('click', preventUnspiderfy, true);
   });
 
-  clusterGroup.on('unspiderfied', function(e) {
-    e.markers.forEach(function(marker) {
-      const el = marker.getElement();
-      if (el && marker._keepSpiderfyOpen) {
-        el.removeEventListener('click', marker._keepSpiderfyOpen, true);
-      }
-      delete marker._keepSpiderfyOpen;
-    });
+  clusterGroup.on('unspiderfied', function() {
+    spiderfiedMarkers = [];
+    document.removeEventListener('click', preventUnspiderfy, true);
   });
 
   window.LOCATIONS.forEach((_, i) => {
