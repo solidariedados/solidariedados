@@ -192,5 +192,17 @@ window.LOCATIONS = [
     instagram: 'rosasininho',
     discord: 'http://discordapp.com/users/354385264447193088',
     website: 'https://www.foradestemundo.com'
+  },
+  {
+    name: 'Afonso Molinar',
+    image: 'pictures/afonsomolinar.jpg',
+    distrito: 'Lisboa',
+    description: 'Afonso Molinar é ator e artista multidisciplinar, bem como Mestre de Jogo. É diretor do teatroàespada, um projeto que explora as intersecções entre Jogos Narrativos e Teatro, juntando encenação experimental e expressão artística em projetos que dão destaque à vertente criativa e social dos RPGs.',
+    lat: 38.7123,
+    lng: -9.1390,
+    maps: 'https://maps.app.goo.gl/4CFGkds47H3H5unj9',
+    instagram: 'afonsomolina',
+    discord: 'https://discord.gg/nB3AYpupUx',
+    website: 'https://www.teatroafaca.com/teatroaespada'
   }
 ];
