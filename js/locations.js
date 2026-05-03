@@ -58,6 +58,14 @@ window.LOCATIONS = [
     discord: 'http://discordapp.com/users/403567480217272330'
   },
   {
+    name: 'Nuno Teixeira',
+    distrito: 'Setúbal',
+    description: '10 anos de experiência; hiper-narrativo; improv.',
+    lat: 38.5244,
+    lng: -8.8882,
+    instagram: 'nunotxr'
+  },
+  {
     name: 'Barda Laurinha',
     image: 'pictures/bardalaurinha.jpg',
     distrito: 'Coimbra',
