@@ -248,7 +248,7 @@ setTimeout(() => {
               layer.closeTooltip();
             },
             click(e) {
-              // Zoom to the clicked district
+              if (map._popup) return;
               const bounds = layer.getBounds();
               map.fitBounds(bounds, { padding: [50, 50], animate: true });
             },
