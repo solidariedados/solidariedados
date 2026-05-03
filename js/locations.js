@@ -157,6 +157,6 @@ window.LOCATIONS = [
     lng: -8.6185,
     maps: 'https://maps.app.goo.gl/sDpRtCmNWo4h7Njs7',
     instagram: 'carimagadias',
-    website: 'www.carolinamagalhaesdias.com'
+    website: 'https://www.carolinamagalhaesdias.com'
   }
 ];
