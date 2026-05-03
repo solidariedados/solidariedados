@@ -158,5 +158,39 @@ window.LOCATIONS = [
     maps: 'https://maps.app.goo.gl/sDpRtCmNWo4h7Njs7',
     instagram: 'carimagadias',
     website: 'https://www.carolinamagalhaesdias.com'
+  },
+  {
+    name: 'Joana Jesus',
+    image: 'pictures/joanajesus.jpg',
+    distrito: 'Lisboa',
+    description: 'Com vários anos de experiência como GM, a Joana corre one-shots semanalmente no restaurante Wizards of the Toast, passando por dezenas de sistemas de jogo diferentes.',
+    lat: 38.7696,
+    lng: -9.1015,
+    maps: 'https://maps.app.goo.gl/tko9PTmz6Z83d9aW6',
+    instagram: 'thealmightygm'
+  },
+  {
+    name: 'João Reis',
+    image: 'pictures/joaoreis.jpg',
+    distrito: 'Braga',
+    description: 'Seja por trás do GM screen ou por trás da câmara, criar narrativas cativantes é o meu principal objetivo. Após muitos anos a tentar encontrar uma forma de me expressar criativamente, a fotografia permitiu-me explorar o meio visual como forma de contar histórias. Mas depois descobri os jogos narrativos e um meio totalmente novo através do qual as minhas narrativas podiam ganhar vida. O miúdo nerd que cresceu a ler sagas épicas encontrou uma forma de reviver, recontar e reconectar-se com essas fantasias, ao mesmo tempo que cria ligações com uma comunidade apaixonada e forja amizades duradouras à volta da mesa.',
+    lat: 41.4438,
+    lng: -8.2930,
+    maps: 'https://share.google/aLvjHPP9frRuPeREi',
+    instagram: 'joao.reis.94',
+    discord: 'http://discordapp.com/users/1344797389419974749',
+    custom1: { name: 'Instagram vanishingkraken', icon: 'instagram', link: 'https://www.instagram.com/vanishingkraken/' }
+  },
+  {
+    name: 'Mora Sininho Rosa',
+    image: 'pictures/rosasininho.jpg',
+    distrito: 'Évora',
+    description: 'Criadora de conteúdo sobre jogos narrativos, livros, mitologia e temas queer. Game Master na loja Weatherlight games e em eventos. Começou a iniciativa Dados de Vénus para promover encontros queer de jogos narrativos.',
+    lat: 38.5642,
+    lng: -7.9176,
+    maps: 'https://maps.app.goo.gl/4CFGkds47H3H5unj9',
+    instagram: 'rosasininho',
+    discord: 'http://discordapp.com/users/354385264447193088',
+    website: 'https://www.foradestemundo.com'
   }
 ];
