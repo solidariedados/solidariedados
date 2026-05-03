@@ -39,8 +39,8 @@ window.LOCATIONS = [
     image: 'pictures/riddari.jpg',
     distrito: 'Santarém',
     description: 'Um grande apaixonado por narrativa de fantasia e actualmente Daggerheart é o meu campo de batalha favorito. Sou DM e faço streams onde me dedico a criar e partilhar as minhas campanhas com os meus jogadores. Onde exploramos o equilibrio entre esperança e medo. Essa dedicação ao universo de Daggerheart também se extende ao meu podcast onde mergulhamos a fundo em tudo o que vem no livro. Fora das mesas sou Fotografo e Videografo onde uso o meu olho criativo para dar vida a outras histórias através da Frutografia. No fundo, sou um contador de histórias, sejam elas com dados, microfones ou lentes.',
-    lat: 39.33768983780347,
-    lng: -8.935198920472429,
+    lat: 39.3376,
+    lng: -8.9351,
     maps: 'https://maps.app.goo.gl/WHZCeGXXPm49MW5E6',
     instagram: 'riddari.cos',
     discord: 'https://discord.gg/kRA2f2Aku',
@@ -52,8 +52,8 @@ window.LOCATIONS = [
     image: 'pictures/mitchell.jpg',
     distrito: 'Santarém',
     description: 'Mitchell Ventura é um dos produtores do podcast português de TTRPG Dados à Portuguesa, conhecido por explorar diversos sistemas e mundos, com um elenco rotativo. Mitchell também é um dos criadores da The Mimic Network, uma rede colaborativa de podcasts de RPG de mesa focada em apoiar o crescimento e expandir a distribuição.',
-    lat: 39.2354,
-    lng: -8.6858,
+    lat: 39.4769,
+    lng: -8.5388,
     instagram: 'mitchellfroisventura',
     discord: 'http://discordapp.com/users/403567480217272330'
   },
@@ -147,5 +147,16 @@ window.LOCATIONS = [
     website: 'https://linktr.ee/bardosdomondego',
     custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' },
     custom2: { name: 'Instagram Sanji da Tuga', icon: 'instagram', link: 'https://www.instagram.com/sanjidatuga/' }
+  },
+  {
+    name: 'Carolina Magalhães Dias',
+    image: 'pictures/cari.jpg',
+    distrito: 'Santarém',
+    description: 'Jogadora desde 2016, co-fundadora e atual Presidente da Associação Quebra-Dados. Mestra na Quebra-Dados e outros espaços do Porto, assim como em convenções espalhadas pelo país.',
+    lat: 41.1622,
+    lng: -8.6185,
+    maps: 'https://maps.app.goo.gl/sDpRtCmNWo4h7Njs7',
+    instagram: 'carimagadias',
+    website: 'www.carolinamagalhaesdias.com'
   }
 ];
