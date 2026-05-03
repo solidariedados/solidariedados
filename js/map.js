@@ -437,23 +437,29 @@ setTimeout(() => {
 
   clusterGroup.addTo(map);
 
-  // Replace markercluster's own click-to-unspiderfy with a smarter version:
-  // keep the spiderfy open when the click was just closing a popup.
-  map.off('click', clusterGroup._unspiderfyZoomOrClick, clusterGroup);
+  // Keep spiderfy open when the click only closes a popup.
+  // Capture state on mousedown/touchstart (before any click handlers run),
+  // then re-spiderfy in the next animation frame if needed.
+  var spiderClusterBeforeClick = null;
+  var popupOpenBeforeClick = false;
 
-  let popupOpenAtMousedown = false;
-  const mapEl = map.getContainer();
-  mapEl.addEventListener('mousedown', function() {
-    popupOpenAtMousedown = !!map._popup;
-  }, true);
-  mapEl.addEventListener('touchstart', function() {
-    popupOpenAtMousedown = !!map._popup;
-  }, { capture: true, passive: true });
+  function capturePreClickState() {
+    spiderClusterBeforeClick = clusterGroup._spiderfied || null;
+    popupOpenBeforeClick = !!map._popup;
+  }
+
+  map.getContainer().addEventListener('mousedown', capturePreClickState, true);
+  map.getContainer().addEventListener('touchstart', capturePreClickState, { capture: true, passive: true });
 
   map.on('click', function() {
-    if (!clusterGroup._spiderfied) return;
-    if (!popupOpenAtMousedown) {
-      clusterGroup._spiderfied.unspiderfy();
+    var cluster = spiderClusterBeforeClick;
+    var hadPopup = popupOpenBeforeClick;
+    spiderClusterBeforeClick = null;
+    popupOpenBeforeClick = false;
+    if (cluster && hadPopup && !clusterGroup._spiderfied) {
+      requestAnimationFrame(function() {
+        if (!clusterGroup._spiderfied) cluster.spiderfy();
+      });
     }
   });
 
