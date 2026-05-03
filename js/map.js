@@ -437,6 +437,27 @@ setTimeout(() => {
 
   clusterGroup.addTo(map);
 
+  // Replace markercluster's own click-to-unspiderfy with a smarter version:
+  // keep the spiderfy open when the click was just closing a popup.
+  map.off('click', clusterGroup._unspiderfyZoomOrClick, clusterGroup);
+
+  let popupOpenAtMousedown = false;
+  const mapEl = map.getContainer();
+  mapEl.addEventListener('mousedown', function() {
+    popupOpenAtMousedown = !!map._popup;
+  }, true);
+  mapEl.addEventListener('touchstart', function() {
+    popupOpenAtMousedown = !!map._popup;
+  }, { capture: true, passive: true });
+
+  map.on('click', function() {
+    if (!clusterGroup._spiderfied) return;
+    if (!popupOpenAtMousedown) {
+      clusterGroup._spiderfied.unspiderfy();
+    }
+  });
+
+
   // Return a pinned marker back into the cluster group
   function returnMarkerToCluster(marker) {
     if (map.hasLayer(marker) && !clusterGroup.hasLayer(marker)) {
