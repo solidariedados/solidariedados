@@ -432,35 +432,36 @@ setTimeout(() => {
 
   clusterGroup.addTo(map);
 
-  // Keep popup alive until user explicitly closes it
-  let activePopupMarker = null;
-  let reopenTimeout = null;
-  let userClosed = false;
-
-  map.on('click', function() { userClosed = true; clearTimeout(reopenTimeout); activePopupMarker = null; });
-
-  map.on('popupclose', function() {
-    if (activePopupMarker && !userClosed) {
-      const marker = activePopupMarker;
-      reopenTimeout = setTimeout(function() {
-        if (activePopupMarker === marker) {
-          clusterGroup.zoomToShowLayer(marker, function() { marker.openPopup(); });
-        }
-      }, 300);
-    }
-    userClosed = false;
-  });
+  // Keep popup alive by pulling the marker out of the cluster while its popup is open
+  function returnMarkerToCluster(marker) {
+    if (map.hasLayer(marker)) map.removeLayer(marker);
+    clusterGroup.addLayer(marker);
+  }
 
   window.LOCATIONS.forEach((_, i) => {
     const m = locationMarkers[i];
+    let isPinned = false;
+
     m.on('popupopen', function() {
-      activePopupMarker = m;
-      clearTimeout(reopenTimeout);
+      if (!isPinned) {
+        isPinned = true;
+        clusterGroup.removeLayer(m);
+        m.addTo(map);
+        m.openPopup(); // reopen after move (removeLayer closes it)
+      }
+      // Set up close button to return marker to cluster
       const closeBtn = document.querySelector('.leaflet-popup-close-button');
       if (closeBtn) closeBtn.addEventListener('click', function() {
-        userClosed = true;
-        activePopupMarker = null;
+        isPinned = false;
+        returnMarkerToCluster(m);
       }, { once: true });
+    });
+
+    map.on('click', function() {
+      if (isPinned && !m.isPopupOpen()) {
+        isPinned = false;
+        returnMarkerToCluster(m);
+      }
     });
   });
 
