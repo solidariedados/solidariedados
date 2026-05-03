@@ -75,9 +75,9 @@ window.LOCATIONS = [
     lng: -8.4103,
     maps: 'https://maps.app.goo.gl/LNBXxR58ZywnHj8F6',
     instagram: 'thefairybard',
-    discord: 'http://discordapp.com/users/690242834254659747',
+    discord: 'https://discord.gg/DgD58yntu',
     twitch: 'https://www.twitch.tv/bardos_do_mondego',
-    website: 'https://linktr.ee/bardosdomondego',
+    website: 'https://linktr.ee/bardosdomondego?utm_source=linktree_profile_share&ltsid=1fb272b5-7c9b-43de-acf9-1fe7ee7c3bd0',
     custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' },
   }  ,{
     name: 'Bardo Maia',
@@ -123,7 +123,7 @@ window.LOCATIONS = [
   {
     name: 'Bardo Rhov',
     image: 'pictures/bardorhov.jpg',
-    distrito: 'Santarém',
+    distrito: 'Leiria',
     description: '',
     lat: 39.4633,
     lng: -8.9782,
