@@ -437,31 +437,19 @@ setTimeout(() => {
 
   clusterGroup.addTo(map);
 
-  // Keep spiderfy open when the click only closes a popup.
-  // Capture state on mousedown/touchstart (before any click handlers run),
-  // then re-spiderfy in the next animation frame if needed.
-  var spiderClusterBeforeClick = null;
-  var popupOpenBeforeClick = false;
-
-  function capturePreClickState() {
-    spiderClusterBeforeClick = clusterGroup._spiderfied || null;
-    popupOpenBeforeClick = !!map._popup;
+  // Keep spiderfy open when a click only serves to close a popup.
+  // On mousedown/touchstart we check if both a popup AND spiderfy are active;
+  // if so, temporarily replace the cluster's unspiderfy() with a no-op so
+  // markercluster's click handler does nothing. We restore it next frame.
+  function maybeBlockUnspiderfy() {
+    if (!clusterGroup._spiderfied || !map._popup) return;
+    var cluster = clusterGroup._spiderfied;
+    cluster.unspiderfy = function() {};
+    requestAnimationFrame(function() { delete cluster.unspiderfy; });
   }
 
-  map.getContainer().addEventListener('mousedown', capturePreClickState, true);
-  map.getContainer().addEventListener('touchstart', capturePreClickState, { capture: true, passive: true });
-
-  map.on('click', function() {
-    var cluster = spiderClusterBeforeClick;
-    var hadPopup = popupOpenBeforeClick;
-    spiderClusterBeforeClick = null;
-    popupOpenBeforeClick = false;
-    if (cluster && hadPopup && !clusterGroup._spiderfied) {
-      requestAnimationFrame(function() {
-        if (!clusterGroup._spiderfied) cluster.spiderfy();
-      });
-    }
-  });
+  map.getContainer().addEventListener('mousedown', maybeBlockUnspiderfy, true);
+  map.getContainer().addEventListener('touchstart', maybeBlockUnspiderfy, { capture: true, passive: true });
 
 
   // Return a pinned marker back into the cluster group
