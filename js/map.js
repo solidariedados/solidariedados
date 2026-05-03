@@ -511,6 +511,24 @@ map.on('popupopen', function() {
   if (sidebar) {
     sidebar.classList.add('popup-open');
   }
+
+  // Allow dragging the map from non-interactive popup areas (works on mobile too)
+  const wrapper = document.querySelector('.leaflet-popup-content-wrapper');
+  if (wrapper && !wrapper._dragHandlerAttached) {
+    wrapper._dragHandlerAttached = true;
+
+    function startMapDrag(e) {
+      const isInteractive = e.target.closest(
+        'a, button, .read-more-btn, .social-btn, .popup-link, .leaflet-popup-close-button'
+      );
+      if (!isInteractive && map.dragging && map.dragging._draggable) {
+        map.dragging._draggable._onDown(e);
+      }
+    }
+
+    wrapper.addEventListener('mousedown', startMapDrag, { capture: true });
+    wrapper.addEventListener('touchstart', startMapDrag, { capture: true, passive: true });
+  }
 });
 
 // Listen for popup close event

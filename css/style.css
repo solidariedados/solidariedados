@@ -158,14 +158,6 @@ body {
   padding: 0;
   border-radius: 8px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-}
-
-.leaflet-popup-close-button,
-.social-btn,
-.read-more-btn,
-.popup-link {
-  pointer-events: auto;
 }
 
 .leaflet-popup-content {
