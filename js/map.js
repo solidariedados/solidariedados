@@ -431,6 +431,39 @@ setTimeout(() => {
   });
 
   clusterGroup.addTo(map);
+
+  // Keep popup alive until user explicitly closes it
+  let activePopupMarker = null;
+  let reopenTimeout = null;
+  let userClosed = false;
+
+  map.on('click', function() { userClosed = true; clearTimeout(reopenTimeout); activePopupMarker = null; });
+
+  map.on('popupclose', function() {
+    if (activePopupMarker && !userClosed) {
+      const marker = activePopupMarker;
+      reopenTimeout = setTimeout(function() {
+        if (activePopupMarker === marker) {
+          clusterGroup.zoomToShowLayer(marker, function() { marker.openPopup(); });
+        }
+      }, 300);
+    }
+    userClosed = false;
+  });
+
+  window.LOCATIONS.forEach((_, i) => {
+    const m = locationMarkers[i];
+    m.on('popupopen', function() {
+      activePopupMarker = m;
+      clearTimeout(reopenTimeout);
+      const closeBtn = document.querySelector('.leaflet-popup-close-button');
+      if (closeBtn) closeBtn.addEventListener('click', function() {
+        userClosed = true;
+        activePopupMarker = null;
+      }, { once: true });
+    });
+  });
+
   console.log('Location markers loaded:', window.LOCATIONS.length, 'locations');
 }, 500);
 
