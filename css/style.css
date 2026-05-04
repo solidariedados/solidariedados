@@ -249,6 +249,7 @@ body {
 
 .social-btn.social-maps:hover      { background: #4285f4; color: white; }
 .social-btn.social-instagram:hover { background: #e1306c; color: white; }
+.social-btn.social-tiktok:hover    { background: #010101; color: white; }
 .social-btn.social-discord:hover   { background: #5865f2; color: white; }
 .social-btn.social-twitch:hover    { background: #9146ff; color: white; }
 .social-btn.social-youtube:hover   { background: #ff0000; color: white; }

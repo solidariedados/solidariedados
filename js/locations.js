@@ -13,6 +13,7 @@
  * Optional fields:
  *   - maps:        Google Maps URL (full link)
  *   - instagram:   Instagram handle, without @ (e.g. 'afonsomolinar')
+ *   - tiktok:      TikTok handle, without @ (e.g. 'santasgm')
  *   - discord:     Discord URL (https://discordapp.com/users/<id> or server invite)
  *   - twitch:      Twitch URL (full link)
  *   - youtube:     YouTube channel URL (full link)
