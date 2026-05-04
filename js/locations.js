@@ -218,7 +218,7 @@ window.LOCATIONS = [
   },
   {
     name: 'Tessa Correia',
-    image: 'pictures/tessa.jpg',
+    image: 'pictures/tessa.HEIC',
     distrito: 'Lisboa',
     description: 'Mestre de jogo baseada em Lisboa e criadora de conteúdos sobre TTRPG\'s e livros.',
     lat: 38.7123,
