@@ -215,5 +215,15 @@ window.LOCATIONS = [
     lng: -9.1390,
     instagram: 'whitefangpt',
     discord: 'http://discordapp.com/users/236540974271037440'
+  },
+  {
+    name: 'Tessa Correia',
+    image: 'pictures/tessa.jpg',
+    distrito: 'Lisboa',
+    description: 'Mestre de jogo baseada em Lisboa e criadora de conteúdos sobre TTRPG\'s e livros.',
+    lat: 38.7123,
+    lng: -9.1390,
+    instagram: 'tessa.chb',
+    custom1: { name: 'Tiktok', icon: 'tiktok', link: 'https://www.tiktok.com/@tessacorreia' },
   }
 ];
