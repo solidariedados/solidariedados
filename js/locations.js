@@ -165,7 +165,7 @@ window.LOCATIONS = [
     image: 'pictures/joanajesus.jpg',
     distrito: 'Lisboa',
     description: 'Com vários anos de experiência como GM, a Joana corre one-shots semanalmente no restaurante Wizards of the Toast, passando por dezenas de sistemas de jogo diferentes.',
-    lat: 38.7600,
+    lat: 38.7500,
     lng: -9.1015,
     maps: 'https://maps.app.goo.gl/tko9PTmz6Z83d9aW6',
     instagram: 'thealmightygm'
