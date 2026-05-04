@@ -177,7 +177,7 @@ window.LOCATIONS = [
     description: 'Seja por trás do GM screen ou por trás da câmara, criar narrativas cativantes é o meu principal objetivo. Após muitos anos a tentar encontrar uma forma de me expressar criativamente, a fotografia permitiu-me explorar o meio visual como forma de contar histórias. Mas depois descobri os jogos narrativos e um meio totalmente novo através do qual as minhas narrativas podiam ganhar vida. O miúdo nerd que cresceu a ler sagas épicas encontrou uma forma de reviver, recontar e reconectar-se com essas fantasias, ao mesmo tempo que cria ligações com uma comunidade apaixonada e forja amizades duradouras à volta da mesa.',
     lat: 41.4438,
     lng: -8.2930,
-    maps: 'https://share.google/aLvjHPP9frRuPeREi',
+    maps: 'https://maps.app.goo.gl/rZviRPo2BmhVvoDb8?g_st=ac',
     instagram: 'joao.reis.94',
     discord: 'http://discordapp.com/users/1344797389419974749',
     custom1: { name: 'Instagram vanishingkraken', icon: 'instagram', link: 'https://www.instagram.com/vanishingkraken/' }
