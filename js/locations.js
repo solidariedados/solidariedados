@@ -143,12 +143,11 @@ window.LOCATIONS = [
     lat: 40.2033,
     lng: -8.4103,
     maps: 'https://maps.app.goo.gl/YGZNDu61vwFQmBXu7',
-    instagram: 'jota379',
+    instagram: 'sanjidatuga',
     discord: 'https://discord.gg/DgD58yntu',
     twitch: 'https://www.twitch.tv/bardos_do_mondego',
     website: 'https://linktr.ee/bardosdomondego',
-    custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' },
-    custom2: { name: 'Instagram Sanji da Tuga', icon: 'instagram', link: 'https://www.instagram.com/sanjidatuga/' }
+    custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' }
   },
   {
     name: 'Carolina Magalhães Dias',
