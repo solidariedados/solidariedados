@@ -108,18 +108,16 @@ window.LOCATIONS = [
     custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' }
   },
   {
-    name: 'Barda Cat',
+    name: 'Cat',
     image: 'pictures/bardacat.jpg',
-    distrito: 'Coimbra',
-    description: '',
-    lat: 40.3386,
-    lng: -8.4283,
+    distrito: 'Aveiro',
+    description: 'Breve descrição: Cat, ou Barda Cat, é uma Mestre de Jogo originária do Norte de Portugal, e uma das fundadoras e Vice-presidente do grupo Bardos do Mondego. Foca-se na organização de eventos geek nas zonas Centro e Norte do país, bem como em participar em jogos gravados e ao vivo com os Bardos do Mondego, e a mestrar em convenções sistemas como D&D e Eat the Reich. Até hoje nunca matou um PC, mas há sempre uma primeira vez para tudo.',
+    lat: 40.6405, 
+    lng: -8.6536,
     instagram: 'abardacat',
-    maps: 'https://maps.app.goo.gl/bYBnhb1Fc7u5oXw97',
-    discord: 'https://discord.gg/DgD58yntu',
-    twitch: 'https://www.twitch.tv/bardos_do_mondego',
-    website: 'https://linktr.ee/bardosdomondego?utm_source=linktree_profile_share&ltsid=1fb272b5-7c9b-43de-acf9-1fe7ee7c3bd0',
-    custom1: { name: 'Instagram Bardos do Mondego', icon: 'instagram', link: 'https://www.instagram.com/bardos_do_mondego/' }
+    maps: 'https://maps.app.goo.gl/Hauo5pGNWK1ZEJXc8',
+    discord: 'https://tr.ee/RzdZ34v-gG',
+    youtube: 'https://tr.ee/dSM2gSSn4s',
   },
   {
     name: 'Bardo Rhov',
@@ -226,5 +224,39 @@ window.LOCATIONS = [
     lng: -9.1390,
     instagram: 'tessa.chb',
     tiktok: 'tessacorreia'
+  },
+  {
+    name: 'Simão Vaz',
+    image: 'pictures/simaovaz.jpg',
+    distrito: 'Lisboa',
+    discord: 'https://discord.gg/nRSBqqQm5B',
+    description: 'Simão Vaz é ator, contador de histórias e um dos fundadores da companhia ALEA.Depois de completar o curso de interpretação na Escola Profissional de Teatro de Cascais, emigrou para o Reino Unido onde descobriu os jogos narrativos em 2017. Desde então fez parte da equipa de produção do festival GamePlay, dedicado a jogos e às histórias que são contadas neles, onde organizou três livestreams de longa duração, e fundou um clube de jogos narrativos para adolescentes. Em 2024 regressou a Portugal onde produziu e participou em jogos ao vivo na Rolisboa, Rolinvicta e Festival Contacto, assim como jogos em série em plataformas digitais e podcasts dedicados a jogos narrativos. Mestra regularmente no Ritual Poliédrico da ALEA, nos Encontros Mensais de Roleplayers de Lisboa, e em convenções.',
+    lat: 38.6945,
+    lng: -9.3146,
+    instagram: 'alea_ac25',
+    custom1: { name: 'Instagram Simão Vaz', icon: 'instagram', link: 'https://www.instagram.com/simaov22 /' },
+  },
+  {
+    name: 'André Tavares',
+    image: 'pictures/andretavares.jpg',
+    distrito: 'Setúbal',
+    discord: 'https://discordapp.com/users/409450954916626442',
+    maps: 'https://maps.app.goo.gl/EMdbhGma6rXnZQu16',
+    description: 'O André Tavares é mestre de jogo há mais de uma década e há 8 anos que constrói e desenvolve a comunidade de jogos narrativos Portuguesa. Foi produtor na Rola Iniciativa onde produziu vários programas abordando diferentes dimensões do hobby. Foi cofundador da Maré Baixa onde desenvolveu vários jogos narrativos e experiências. É cofundador da galardoada convenção Rolisboa, a convecção de jogos narrativos de Lisboa. Hoje dedica os seus dias a desenvolver experiências imersivas para empresas com foco no storytelling. O André acredita que "enludinar" (jogar histórias) tem um verdadeiro poder curativo, e que o seu abraço é o melhor abraço do mundo.',
+    lat: 38.6012,
+    lng: -9.1804,
+    instagram: 'andretavaresrpg'
+  },
+  {
+    name: 'Marta Costa',
+    image: 'pictures/martacosta.jpg',
+    distrito: 'Lisboa',
+    discord: 'https://discordapp.com/users/236187335849541632',
+    description: 'Estou no mundo dos ttrpgs há 9 anos, faço parte da organização da Rolisboa e do Rola Iniciativa. Gosto tanto de introduzir pessoas novas ao hobby, como mestrar para veteranos. As minhas sessões costumam ser mais narrativas e com alguma tendência para o horror e tensão, e sempre que possivel gosto de usar banda sonora para estabelecer o ambiente da sessão. Os meus sistemas preferidos para mestrar, de momento, são D&D5e, Lord of the Rings RPG e Dread. ',
+    lat: 38.7123,
+    lng: -9.1390,
+    instagram: 'dark_isis19',
+    twitch: 'https://www.twitch.tv/dark_isis19 e https://www.twitch.tv/rolainiciativa',
+    tiktok: 'dark_isis19'
   }
 ];
