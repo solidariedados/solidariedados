@@ -21,7 +21,8 @@ body {
 }
 
 #header {
-  background: #2C1040;
+  background: #2C1040 url('../pictures/header-pattern.png') repeat-x center;
+  background-size: auto 100%;
   padding: 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   flex-shrink: 0;
@@ -35,10 +36,17 @@ body {
   display: block;
 }
 
+#header-logo2 {
+  height: 72px;
+  width: auto;
+  display: block;
+  margin-left: 3px;
+}
+
 #header-title {
   font-family: 'Rockwell Extra Bold', 'Rockwell', Georgia, serif;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 0.05em;
   margin-left: 8px;
   white-space: nowrap;
