@@ -234,7 +234,7 @@ window.LOCATIONS = [
     lat: 38.6945,
     lng: -9.3146,
     instagram: 'alea_ac25',
-    custom1: { name: 'Instagram Simão Vaz', icon: 'instagram', link: 'https://www.instagram.com/simaov22 /' },
+    custom1: { name: 'Instagram Simão Vaz', icon: 'instagram', link: 'https://www.instagram.com/simaov22/' },
   },
   {
     name: 'André Tavares',
@@ -256,7 +256,8 @@ window.LOCATIONS = [
     lat: 38.7123,
     lng: -9.1390,
     instagram: 'dark_isis19',
-    twitch: 'https://www.twitch.tv/dark_isis19 e https://www.twitch.tv/rolainiciativa',
-    tiktok: 'dark_isis19'
+    twitch: 'https://www.twitch.tv/rolainiciativa',
+    tiktok: 'dark_isis19',
+    custom1: { name: 'Twitch Dark Isis', icon: 'twitch', link: 'https://www.twitch.tv/dark_isis19' }
   }
 ];
