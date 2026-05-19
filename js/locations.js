@@ -259,5 +259,14 @@ window.LOCATIONS = [
     twitch: 'https://www.twitch.tv/rolainiciativa',
     tiktok: 'dark_isis19',
     custom1: { name: 'Twitch Dark Isis', icon: 'twitch', link: 'https://www.twitch.tv/dark_isis19' }
+  },
+    {
+    name: 'Nelson Moreira',
+    image: 'pictures/nelsonmoreira.jpg',
+    distrito: 'Santarém',
+    description: 'Mestre principalmente na Valquíria em Torres Novas e online no discord RPGPortugal. Adoro Savage Worlds',
+    lat: 39.4725,
+    lng: -8.5345,
+    maps: 'https://maps.app.goo.gl/zS1NUyxzr2RRcLgx6'
   }
 ];
